@@ -243,15 +243,25 @@
 <script src="script.js"></script>
 <!-- RB2B Visitor Identification -->
 <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("1N5W0H73RRO5");</script>
-<!-- Vercel Web Analytics -->
+<!-- Analytics opt-out handler + conditional Vercel Analytics load -->
 <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('vaoff') === '1') {
+      localStorage.setItem('va-disable', '1');
+      alert('You are now excluded from Vercel Analytics on this device.');
+    }
+    if (params.get('vaon') === '1') {
+      localStorage.removeItem('va-disable');
+      alert('Analytics re-enabled on this device.');
+    }
+    if (localStorage.getItem('va-disable') !== '1') {
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+      var s1 = document.createElement('script'); s1.defer = true; s1.src = '/_vercel/insights/script.js'; document.head.appendChild(s1);
+      var s2 = document.createElement('script'); s2.defer = true; s2.src = '/_vercel/speed-insights/script.js'; document.head.appendChild(s2);
+    }
+  })();
 </script>
-<script defer src="/_vercel/insights/script.js"></script>
-<!-- Vercel Speed Insights -->
-<script>
-  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
