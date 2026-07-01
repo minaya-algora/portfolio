@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Minaya Algora</title>
+<meta name="description" content="Get in touch — for roles, collaboration, or a good chat." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Minaya Algora</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="contact-wrap">
+  <div class="container">
+    <div class="contact-inner">
+      <p class="section-eyebrow reveal">Contact</p>
+      <h1 class="contact-title reveal">
+        Let's <em>build something</em><br />worth caring about.
+      </h1>
+      <p class="hero-lede reveal">
+        I'm always open to talking about impact-first, mission-centered roles — and even more open to a good conversation, regardless of the agenda. Drop a message below, or reach out directly.
+      </p>
+
+      <!-- QUICK ACTIONS -->
+      <div class="contact-options" style="margin-top: var(--space-l)">
+        <a href="mailto:minaya.algora@gmail.com" class="contact-option reveal">
+          <div>
+            <div class="contact-option-label">Email me directly</div>
+            <div class="contact-option-value">minaya.algora@gmail.com</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/messaging/compose/?recipient=minaya-algora" target="_blank" rel="noopener" class="contact-option reveal">
+          <div>
+            <div class="contact-option-label">Message me on LinkedIn</div>
+            <div class="contact-option-value">linkedin.com/in/minaya-algora</div>
+          </div>
+          <span class="arrow">↗</span>
+        </a>
+        <a href="assets/docs/Minaya-Algora-CV.pdf" download class="contact-option reveal">
+          <div>
+            <div class="contact-option-label">CV / Resume</div>
+            <div class="contact-option-value">Download PDF</div>
+          </div>
+          <span class="arrow">↓</span>
+        </a>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="contact-divider reveal">
+        <span>Or send a message</span>
+      </div>
+
+      <!-- FORM -->
+      <form class="contact-form reveal" action="https://formspree.io/f/xpqgypnq" method="POST" id="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="company">Company <span class="optional">(optional)</span></label>
+          <input type="text" id="company" name="company" autocomplete="organization" placeholder="Where you work" />
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="What's on your mind?"></textarea>
+        </div>
+        <!-- Honeypot for spam protection -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <button type="submit" class="btn btn-primary form-submit">
+          Send message <span class="arrow">→</span>
+        </button>
+        <p class="form-status" id="form-status" aria-live="polite"></p>
+      </form>
+
+      <p class="reveal muted" style="margin-top: var(--space-xl); font-size: 0.9rem">
+        Based in Madrid · Open to remote, hybrid, and on-site (with reason). Working across Europe, the US, and the UK.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>© 2026 Minaya Algora</div>
+      <div>
+        <a href="mailto:minaya.algora@gmail.com">minaya.algora@gmail.com</a> ·
+        <a href="https://linkedin.com/in/minaya-algora" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
