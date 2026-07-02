@@ -67,6 +67,19 @@
         <span>Or send a message</span>
       </div>
 
+      <!-- SUCCESS MODAL -->
+      <div class="modal-backdrop" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-modal-title" hidden>
+        <div class="modal-card">
+          <button type="button" class="modal-close" aria-label="Close" id="success-modal-close">×</button>
+          <div class="modal-icon" aria-hidden="true">✓</div>
+          <h3 class="modal-title" id="success-modal-title">Got it.</h3>
+          <p class="modal-desc">
+            My n8n workflow just pinged me about your message. I'll be back before your coffee's cold.
+          </p>
+          <button type="button" class="btn btn-primary modal-cta" id="success-modal-cta">Close</button>
+        </div>
+      </div>
+
       <!-- FORM -->
       <form class="contact-form reveal" action="https://formspree.io/f/xpqgypnq" method="POST" id="contact-form">
         <div class="form-row">

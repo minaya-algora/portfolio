@@ -75,14 +75,7 @@ if (contactForm) {
       });
       if (res.ok) {
         contactForm.reset();
-        status.innerHTML = `
-          <span class="form-status-icon" aria-hidden="true">✓</span>
-          <span class="form-status-body">
-            <strong class="form-status-title">Got it.</strong>
-            <span class="form-status-desc">My n8n workflow just pinged me about your message. I'll be back before your coffee's cold.</span>
-          </span>
-        `;
-        status.classList.add('success');
+        showSuccessModal();
       } else {
         const data = await res.json().catch(() => ({}));
         status.textContent = data.error || "Something went wrong. Try email instead?";
@@ -95,5 +88,31 @@ if (contactForm) {
       submitBtn.disabled = false;
       submitBtn.style.opacity = '1';
     }
+  });
+
+  // Success modal wiring
+  const modal = document.getElementById('success-modal');
+  const modalClose = document.getElementById('success-modal-close');
+  const modalCta = document.getElementById('success-modal-cta');
+
+  function showSuccessModal() {
+    if (!modal) return;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    modalCta && modalCta.focus();
+  }
+  function hideSuccessModal() {
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  modalClose && modalClose.addEventListener('click', hideSuccessModal);
+  modalCta && modalCta.addEventListener('click', hideSuccessModal);
+  modal && modal.addEventListener('click', (e) => {
+    if (e.target === modal) hideSuccessModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && !modal.hidden) hideSuccessModal();
   });
 }
