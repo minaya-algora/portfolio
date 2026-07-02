@@ -869,22 +869,39 @@ p { max-width: var(--reading-width); }
 /* --- Case study / timeline company links --- */
 .case-company-link {
   color: inherit;
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--transition);
+  border-bottom: 1px solid rgba(107, 124, 95, 0.4);
+  transition: border-color var(--transition), color var(--transition);
 }
 
 .case-company-link:hover {
   border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+.case-company-link::after {
+  content: ' ↗';
+  font-size: 0.7em;
+  opacity: 0.6;
+  vertical-align: super;
+  margin-left: 0.1em;
 }
 
 .timeline-company-link {
   color: var(--accent);
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(107, 124, 95, 0.4);
   transition: border-color var(--transition);
 }
 
 .timeline-company-link:hover {
   border-bottom-color: var(--accent);
+}
+
+.timeline-company-link::after {
+  content: ' ↗';
+  font-size: 0.7em;
+  opacity: 0.6;
+  vertical-align: super;
+  margin-left: 0.1em;
 }
 
 /* --- Footer Cowork tag --- */
