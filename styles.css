@@ -1206,12 +1206,15 @@ p { max-width: var(--reading-width); }
 .pullquote-attr {
   text-align: center;
   color: var(--ink-muted);
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  margin-top: calc(-1 * var(--space-l));
-  margin-bottom: var(--space-l);
+  font-family: var(--font-serif);
   font-style: italic;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+  margin-top: calc(-1 * var(--space-m));
+  margin-bottom: var(--space-l);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* --- Utility --- */
