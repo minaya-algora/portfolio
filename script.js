@@ -54,6 +54,31 @@ requestAnimationFrame(() => {
   document.body.style.opacity = '1';
 });
 
+// Tool icons: replace missing icons with initial fallback
+document.querySelectorAll('.tool-card img').forEach((img) => {
+  img.addEventListener('error', () => {
+    const card = img.parentElement;
+    if (!card) return;
+    const initial = card.getAttribute('data-initial') || '·';
+    const fallback = document.createElement('div');
+    fallback.className = 'tool-fallback';
+    fallback.textContent = initial;
+    img.replaceWith(fallback);
+  });
+});
+
+// Carousel prev/next buttons
+document.querySelectorAll('.carousel-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const target = document.getElementById(btn.dataset.carousel);
+    if (!target) return;
+    const dir = parseInt(btn.dataset.dir || '1', 10);
+    const firstItem = target.querySelector('.carousel-item');
+    const step = firstItem ? firstItem.getBoundingClientRect().width + 16 : 320;
+    target.scrollBy({ left: dir * step, behavior: 'smooth' });
+  });
+});
+
 // Contact form: async submit with feedback (Formspree)
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
