@@ -711,8 +711,173 @@ p { max-width: var(--reading-width); }
   margin-top: var(--space-s);
 }
 
-.form-status.success { color: var(--accent); }
 .form-status.error { color: var(--accent-warm); }
+
+.form-status.success {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+  padding: var(--space-m);
+  margin-top: var(--space-m);
+  background: rgba(107, 124, 95, 0.08);
+  border: 1px solid rgba(107, 124, 95, 0.25);
+  border-radius: 8px;
+  color: var(--ink);
+  animation: successPop 0.5s var(--ease);
+}
+
+.form-status-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.form-status-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.form-status-title {
+  font-family: var(--font-serif);
+  font-size: var(--step-2);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.form-status-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+@keyframes successPop {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Inline text link (in body copy) --- */
+.inline-link {
+  color: inherit;
+  border-bottom: 1px solid var(--accent);
+  transition: all var(--transition);
+}
+
+.inline-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--ink);
+}
+
+.inline-link strong { color: inherit; }
+
+/* --- Case study / timeline company links --- */
+.case-company-link {
+  color: inherit;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.case-company-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+.timeline-company-link {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.timeline-company-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* --- Footer Cowork tag --- */
+.footer-cowork {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+
+/* --- Tool stack (Work page) --- */
+.tool-stack {
+  display: grid;
+  gap: var(--space-l);
+  margin-top: var(--space-m);
+}
+
+.tool-category-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-s);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--line);
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-s);
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: var(--space-m) var(--space-s);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: all var(--transition);
+}
+
+.tool-card:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -12px rgba(26, 26, 26, 0.15);
+}
+
+.tool-card img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+
+.tool-card:hover img {
+  opacity: 1;
+}
+
+.tool-card span {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.tool-card:hover span {
+  color: var(--ink);
+}
+
+@media (max-width: 600px) {
+  .tool-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  }
+  .tool-card { padding: var(--space-s) 0.5rem; }
+  .tool-card img { width: 24px; height: 24px; }
+  .tool-card span { font-size: 0.75rem; }
+}
 
 /* --- Footer --- */
 .footer {

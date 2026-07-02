@@ -75,7 +75,13 @@ if (contactForm) {
       });
       if (res.ok) {
         contactForm.reset();
-        status.textContent = "Got it. I'll be back to you within 48 hours.";
+        status.innerHTML = `
+          <span class="form-status-icon" aria-hidden="true">✓</span>
+          <span class="form-status-body">
+            <strong class="form-status-title">Got it.</strong>
+            <span class="form-status-desc">My n8n workflow just pinged me about your message. I'll be back before your coffee's cold.</span>
+          </span>
+        `;
         status.classList.add('success');
       } else {
         const data = await res.json().catch(() => ({}));
