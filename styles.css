@@ -1203,9 +1203,13 @@ p { max-width: var(--reading-width); }
   font-style: normal;
 }
 
-/* When an attribution follows the pullquote, hide the bottom em-dash — the attribution replaces it */
+/* When an attribution follows the pullquote, hide the bottom em-dash and pull it tight */
 .pullquote:has(+ .pullquote-attr)::after {
   content: none;
+}
+
+.pullquote:has(+ .pullquote-attr) {
+  margin-bottom: 0;
 }
 
 .pullquote-attr {
@@ -1213,13 +1217,10 @@ p { max-width: var(--reading-width); }
   color: var(--ink-muted);
   font-family: var(--font-sans);
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
   letter-spacing: 0.005em;
-  margin-top: var(--space-s);
-  margin-bottom: var(--space-xl);
+  margin: 0.5rem auto var(--space-xl);
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .pullquote-attr::before {
