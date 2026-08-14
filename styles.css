@@ -228,23 +228,26 @@ p { max-width: var(--reading-width); }
 .hero:hover .hero-image img { transform: scale(1.03); }
 
 /* --- Buttons --- */
-.btn-row { display: flex; gap: var(--space-s); flex-wrap: wrap; }
+.btn-row { display: flex; gap: var(--space-s); flex-wrap: wrap; align-items: center; }
 
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.5rem;
-  font-size: 0.92rem;
-  letter-spacing: 0.02em;
+  padding: 0.9rem 1.6rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
   border-radius: 999px;
   transition: all var(--transition);
-  border: 1px solid var(--ink);
+  border: 1.5px solid var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-primary {
   background: var(--ink);
   color: var(--bg);
+  border-color: var(--ink);
 }
 
 .btn-primary:hover {
@@ -253,17 +256,19 @@ p { max-width: var(--reading-width); }
 }
 
 .btn-ghost {
-  border-color: var(--line);
-  color: var(--ink-soft);
-}
-
-.btn-ghost:hover {
+  background: transparent;
   border-color: var(--ink);
   color: var(--ink);
 }
 
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
 .btn .arrow {
   transition: transform var(--transition);
+  display: inline-block;
 }
 
 .btn:hover .arrow { transform: translateX(3px); }
