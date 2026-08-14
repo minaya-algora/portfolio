@@ -307,6 +307,8 @@ p { max-width: var(--reading-width); }
   line-height: 1.4;
 }
 
+.stat-label strong { color: var(--ink); font-weight: 500; }
+
 /* --- Section heads --- */
 .section-eyebrow {
   font-size: 0.8rem;
