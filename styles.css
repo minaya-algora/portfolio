@@ -1117,8 +1117,31 @@ p { max-width: var(--reading-width); }
   gap: var(--space-s);
 }
 
-.footer a { color: var(--ink-soft); transition: color var(--transition); }
-.footer a:hover { color: var(--ink); }
+.footer a,
+.footer a:visited { color: var(--ink-muted); transition: color var(--transition); border-bottom: 1px solid transparent; }
+.footer a:hover { color: var(--ink); border-bottom-color: var(--ink-muted); }
+
+.footer-cowork {
+  color: var(--ink-muted);
+}
+
+/* Footer variant with a context note above the copyright row */
+.footer-with-note .footer-note {
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  max-width: 720px;
+  margin: 0 0 var(--space-m);
+  line-height: 1.55;
+}
+
+.footer-with-note {
+  padding-top: var(--space-m);
+}
+
+.footer-with-note .footer-inner {
+  padding-top: var(--space-s);
+  border-top: 1px solid var(--line);
+}
 
 /* --- Tools chips --- */
 .tools {
