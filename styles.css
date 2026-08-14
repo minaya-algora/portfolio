@@ -187,8 +187,8 @@ p { max-width: var(--reading-width); }
 }
 
 .hero-eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-muted);
   margin-bottom: var(--space-m);
@@ -198,7 +198,8 @@ p { max-width: var(--reading-width); }
   margin-bottom: var(--space-m);
 }
 
-.hero h1 em {
+.hero h1 em,
+.work-hero h1 em {
   font-style: italic;
   color: var(--accent);
 }
@@ -327,7 +328,10 @@ p { max-width: var(--reading-width); }
 .section-title {
   margin-bottom: var(--space-l);
   max-width: 800px;
+  color: var(--ink);
 }
+
+.section-title em { font-style: italic; color: var(--accent); }
 
 /* --- Intro block --- */
 .intro p {
@@ -684,6 +688,8 @@ p { max-width: var(--reading-width); }
 
 .contact-title {
   margin-bottom: var(--space-l);
+  font-size: var(--step-5);
+  line-height: 1.05;
 }
 
 .contact-title em { font-style: italic; color: var(--accent); }
