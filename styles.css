@@ -170,6 +170,7 @@ p { max-width: var(--reading-width); }
   display: flex;
   align-items: center;
   padding-top: 6rem;
+  padding-bottom: var(--space-xl);
   position: relative;
   overflow: hidden;
 }
